@@ -3,15 +3,14 @@
 // getNumbersWithSquareRoots(17) => [0, 1, 4, 9, 16]
 
 export function getNumbersWithSquareRoots(max) {
-  const sqRootNums = [];
+  const sqRootNumbers = [];
   for (let i = 0; i < max; i++) {
-    if (i * i == i) {
-      sqRootNums.push(i);
-      return sqRootNums;
+    const num = Math.sqrt(i);
+    if(Number.isInteger(num)) {
+      sqRootNumbers.push(i);
     }
-    
-  }
-
+    }
+  return sqRootNumbers;
 }
 
 // === TEST YOURSELF ===
