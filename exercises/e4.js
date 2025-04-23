@@ -22,18 +22,14 @@ export function findMinValueInArray(array) {
 
 export function findMaxValueInArray(array) {
   for (let i = 0; i < array.length; i++) {
-    let max = array[array.length - 1];
-    if (array[i] === max) {
+    let pos = 1;
+    let max = array[pos];
+    if (array[i] > max) {
       max = array[i];
-      return max;
+      return max
     }
-    else if (array[i] < max){
-      max = array[i];
-      return max;
-    }
-    else if (array[i] > max) {
-      max = array[i];
-      return max;
+    else if (array[i] < max) {
+      pos++;
     }
   }
 }
