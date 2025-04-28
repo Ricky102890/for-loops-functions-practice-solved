@@ -7,22 +7,27 @@
 export function getAllWithdrawals(array) {
   let totals = [];
   for (let i = 0; i < array.length; i++) {
-    const bankObj = array[i];
-    const bankWithdrawalAcct = bankObj['withdrawals'];
-    let withdrawalSum = 0;
-    for (const sum in bankWithdrawalAcct) {
-      withdrawalSum += (sum * 1000);
-    }
-    if (bankWithdrawalAcct) {
-      totals.push(withdrawalSum);
+    let obj = array[i];
+    let withdrawals = obj.withdrawals;
+    if (withdrawals) {
+      for (let x = 0; i < withdrawals.length; x++) {
+        let totalWithdrawals = 0;
+        totalWithdrawals += withdrawals[x];
+        if (totalWithdrawals > 0) {
+          totals.push(totalWithdrawals);
+        }
+  
+      }
     }
     else {
-      withdrawalSum = 0;
-      totals.push(withdrawalSum);
+      totals.push(0);
     }
   }
   return totals;
 }
+    
+    
+
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"
 // If the test has all tests passed, switch to the next exercise file
