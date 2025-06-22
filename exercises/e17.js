@@ -6,8 +6,20 @@
 // NOTE: You can NOT use the array.includes() method in your code
 
 export function doesArrayInclude(array, value) {
-  // Your code goes here...
-
+  let counter = 0;
+  while (counter < (array.length + 1)) {
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] === value) {
+        return true;
+      }
+    }
+    if (array[counter] !== value) {
+      counter++;
+    }
+  }
+  if (counter >= (array.length + 1)) {
+    return false;
+  }
 }
 
 
