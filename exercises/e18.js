@@ -5,14 +5,17 @@
 // NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
 
 export function joinToString(array, separator) {
-    // let newArray = [];
-    // let arrayString = [];
-    // for (let i = 0; i < array.length; i++) {
-    //     arrayString += array[i] + separator;
-    // }
-    // newArray.push(arrayString);
-    // return newArray;
-}
+    let stringArray = '';
+    for (let i = 0; i < array.length; i++) {
+        if (i < array.length -1) {
+            stringArray += (array[i] + separator);
+        }
+        else  {
+            stringArray += array[i];
+        }
+    }
+    return stringArray;
+   }
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-18"
